@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الدرس</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="lessons.js"></script>
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+
+  <div class="lesson-wrapper">
+    <a href="index.html" class="back">← رجوع إلى الفهرس</a>
+    <h2 class="lesson-title">الدرس</h2>
+
+    <div class="lesson-box">
+      <!-- السؤال 1: صح/خطأ (يتغير تلقائيًا) -->
+      <div id="q1" class="exercise">
+        <h4 id="tf-question"></h4>
+        <div class="btn-row">
+          <button class="btn" onclick="answerQ1(true)">صح</button>
+          <button class="btn" onclick="answerQ1(false)">خطأ</button>
+        </div>
+      </div>
+
+      <!-- السؤال 2: دوائر (يتغير تلقائيًا) -->
+      <div id="q2" class="exercise hidden">
+        <h4 id="mc-question"></h4>
+        <form id="q2form" onsubmit="checkQ2(event)">
+          <div id="mc-options"></div>
+          <button type="submit" class="btn">تأكيد</button>
+        </form>
+      </div>
+
+      <!-- النتيجة -->
+      <div id="result" class="result hidden">
+        <span id="stars" class="stars"></span>
+        <div class="score">نتيجتك: <span id="score">0 / 2</span></div>
+        <p id="msg"></p>
+        <div class="btn-row" style="margin-top:8px;">
+          <a class="btn" href="#" onclick="return retry();">إعادة المحاولة</a>
+          <a class="btn" href="index.html">رجوع للفهرس</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
